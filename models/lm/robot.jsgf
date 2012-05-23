@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar robot;
+
+public <command> = <liigu> | <keera>;
+<liigu> = (liigu | mine |sõida) [ ( üks | kaks | kolm | neli | viis ) meetrit ] (edasi | tagasi);
+<keera> = (keera | pööra ) ( paremale | vasakule );
