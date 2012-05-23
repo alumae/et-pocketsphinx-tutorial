@@ -15,7 +15,7 @@ Eeldused
 
  * Linux
  
-=== PocketSphinx
+### PocketSphinx
 
 Kompileeri ja installeeri sphinxbase ja pocketsphinx, soovitavalt nightly snapshot: http://cmusphinx.sourceforge.net/wiki/download/
  
@@ -23,21 +23,21 @@ Kompileeri ja installeeri sphinxbase ja pocketsphinx, soovitavalt nightly snapsh
 Grammatika-põhine tuvastus
 --------------------------
 
-=== JSGF
+### JSGF
 
 Kõige lihtsam on kasutada kõnetuvastust grammatika-põhise keelemudeliga. Näiteks olgu meil robot, mis oskab sõita edasi ja tagasi, ning pöörata vasakule ja paremale. Me tahamegi, et kõnetuvastaja saaks aru käsklustest á la: "sõida edasi", "sõida viis meetrit tagasi", "pööra paremale" jms. Kõigepealt peame siis välja mõtlema grammatika, mis selliseid käske "aktsepteerib" (ja muid käske, näit. "pööra viis meetrit vaskule" soovitavalt mitte). PocketSphinxile tuleb grammatika ette anda JSGF formaadis. Näiteks ülalkirjeldatud käske aktsepteerib järgmine grammatika:
 
-  #JSGF V1.0;
+    #JSGF V1.0;
 
-  grammar robot;
+    grammar robot;
 
-  public <command> = <liigu> | <keera>;
-  <liigu> = (liigu | mine ) [ ( üks | kaks | kolm | neli | viis ) meetrit ] (edasi | tagasi);
-  <keera> = (keera | pööra ) ( paremale | vasakule );
+    public <command> = <liigu> | <keera>;
+    <liigu> = (liigu | mine ) [ ( üks | kaks | kolm | neli | viis ) meetrit ] (edasi | tagasi);
+    <keera> = (keera | pööra ) ( paremale | vasakule );
   
 Salvestame selle faili `robot.jsgf`.
 
-=== Hääldussõnastik 
+### Hääldussõnastik 
 
 Kõnetuvastuseks on vaja ka hääldusõnastikku, milles on grammatikas kasutatud sõna kohta selle hääldus, kasutades kõnetuvastuse häälikumudelite häälikuinventari.
 
@@ -64,7 +64,7 @@ Tulemus (`robot.dict`):
     üks ue k s
 
 
-=== Käivitamine
+### Käivitamine
 
 Kõige lihtsam on kõnetuvastust testida käsurealt programmiga `pocketsphinx_continuous`. Käivitame:
 
@@ -82,6 +82,6 @@ Ja ütleme näiteks mikrofoni "sõida viis meetrit edasi". Ekraanile peaks ilmum
     READY....
 
 
-=== Integreerimine
+### Integreerimine
 
 PocketSphinxi on väga lihtne integreerida muusse tarkvarasse, sellest hiljem.
