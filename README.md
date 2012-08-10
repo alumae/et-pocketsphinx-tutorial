@@ -82,6 +82,27 @@ Ja ütleme näiteks mikrofoni "sõida viis meetrit edasi". Ekraanile peaks ilmum
     READY....
 
 
+### Offline tuvastus
+
+Kõnetuvastust on lihtne rakendada ka olemasolevatele helifailidele. Kataloogis `test/audio` on kolm wav-faili. Igasühes on üks näitegrammatikale vastav lause.
+Selleks, et tuvastada failis olevad laused, saab kasutada programmi `pocketsphinx_batch`. 
+See programm tahab argumendina saada konfiguratioonifaili, kus on toodud mudelite asukohad,
+tuvastatavate helifailide asukoht, helifailide nimed ja väljundfaili nimi (vt. `test/pocketsphinx.conf`).
+
+Käivitamiseks (kataloogis `test`):
+
+    pocketsphinx_batch pocketsphinx.conf
+
+Tuvastatud laused kirjutatakse faili `test.hyp`, mille sisu peaks olema pärast käivitust selline:
+    
+    mine kolm meetrit edasi (test1 -4627)
+    pööra paremale (test2 -3687)
+    liigu edasi (test3 -4212)
+
+Igal real on kõigepealt tuvastatud lause, sulgudes faili ID ja ka tuvastatud lause skoor.
+
+
+
 ### Integreerimine
 
 PocketSphinxi on väga lihtne integreerida muusse tarkvarasse, sellest hiljem.
