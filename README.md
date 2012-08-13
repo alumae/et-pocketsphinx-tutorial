@@ -84,7 +84,8 @@ Ja ütleme näiteks mikrofoni "sõida viis meetrit edasi". Ekraanile peaks ilmum
 
 ### Offline tuvastus
 
-Kõnetuvastust on lihtne rakendada ka olemasolevatele helifailidele. Kataloogis `test/audio` on kolm wav-faili. Igasühes on üks näitegrammatikale vastav lause.
+Kõnetuvastust on lihtne rakendada ka olemasolevatele helifailidele. Kataloogis `test/audio` on kolm wav-faili. 
+Igasühes on üks näitegrammatikale vastav lause.
 Selleks, et tuvastada failis olevad laused, saab kasutada programmi `pocketsphinx_batch`. 
 See programm tahab argumendina saada konfiguratioonifaili, kus on toodud mudelite asukohad,
 tuvastatavate helifailide asukoht, helifailide nimed ja väljundfaili nimi (vt. `test/pocketsphinx.conf`).
